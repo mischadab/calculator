@@ -184,6 +184,18 @@
                     output = output.substr(0, output.length-1) // make it subtract 1 from output
                     printOutput(output)
                 }
+            } else {
+                var output = getOutput();
+                var history = getHistory(); // declare output and history values
+                if( output !=""){
+                    output = reverseNumberFormat(output);
+                    hsistory = history + output;
+                    if( this.id =="=" ){
+                        var result = eval(history);
+                        printOutput(result);
+                        printHistory("");
+                    }
+                }
             }
         })
     }
