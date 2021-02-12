@@ -178,7 +178,13 @@
                 printHistory("");
                 printOutput("");
             }
-
+            if(this.id=="backspace"){ // CE button functionality
+                var output = reverseNumberFormat(getOutput()).toString(); // make sure it is not dealing with commas, convert it to a string
+                if(output){ // check if output has value
+                    output = output.substr(0, output.length-1) // make it subtract 1 from output
+                    printOutput(output)
+                }
+            }
         })
     }
 
