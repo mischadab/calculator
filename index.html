@@ -150,8 +150,12 @@
 
     // print the output value from the calculator
     function printOutput(num){
+        if(num==""){ // if the number is empty set the value to empty
+            document.getElementById("output-value").innerText=num;
+        } else {
         document.getElementById("output-value").innerText=getFormattedNumber(num); // get formatted number reads the number and returns it with comma separated value
     }
+}
    
     // format the number to have comma separating the vales
     function getFormattedNumber(num){
@@ -159,6 +163,13 @@
         var value = n.toLocaleString("en");
         return value;
     }
+
+    // reverse the number formatting
+    function reverseNumberFormat(num){
+        return Number(num.replace(/,/g,''));
+    }
+
+
 
 
 </script>
